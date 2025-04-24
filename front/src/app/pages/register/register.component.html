@@ -1,44 +1,52 @@
-<aplz-ui-logo size="lg"></aplz-ui-logo>
+<div class="pt-8">
+  <aplz-ui-logo size="lg"></aplz-ui-logo>
+
+  <div class="text-center pt-4 w-[320px] mx-auto">
+    <p class="title">Información personal</p>
+    <p class="subtitle pt-4 pb-4">Ayudanos a completar tu información personal para verificar tu cuenta</p>
+  </div>
+</div>
+
 
 <form [formGroup]="form" (ngSubmit)="register()">
-  <div class="grid gap-6 mb-6 md:grid-cols-2">
+  <div class="grid gap-6 mb-6 md:grid-cols-1 w-[320px] mx-auto">
     <div>
       <label for="username" class="block mb-2 text-sm font-medium text-dark">
-        Nombre(s)
+        Nombre(s) *
       </label>
       <input
         type="text"
         id="firstname"
         class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
-        placeholder="Nombre(s)"
+        placeholder="Ingresa tu nombre(s)"
         formControlName="firstName"
       />
     </div>
 
     <div>
       <label for="lastname" class="block mb-2 text-sm font-medium text-dark">
-        Apellido paterno
+        Apellido Paterno *
       </label>
 
       <input
         type="text"
         id="lastname"
         class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
-        placeholder="Apellido paterno"
+        placeholder="Ingresa tu apellido paterno"
         formControlName="lastName"
       />
     </div>
 
     <div>
       <label for="lastname" class="block mb-2 text-sm font-medium text-dark">
-        Apellido materno
+        Apellido materno *
       </label>
 
       <input
         type="text"
         id="secondLastName"
         class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
-        placeholder="Apellido materno"
+        placeholder="Ingresa tu apellido materno"
         formControlName="secondLastName"
       />
     </div>
@@ -57,13 +65,18 @@
       />
     </div>
   </div>
-  <button
+  <div class="flex justify-center w-[320px] mx-auto">
+    <button
     aplzButton
     aplzAppearance="stroked"
     aplzColor="dark"
     size="md"
     type="submit"
+    class="w-full"
+    [disabled]="form.invalid"
+   
   >
-    Crear cuenta
+    Continuar
   </button>
+  </div>
 </form>

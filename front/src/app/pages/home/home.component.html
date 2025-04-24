@@ -1,0 +1,52 @@
+<div class="pt-8 pb-4">
+    <div class="text-center pt-4 w-[350px] mx-auto">
+      <p class="title">Nuevo prestamo</p>
+    </div>
+  </div>
+  
+  
+  <form [formGroup]="form" (ngSubmit)="newLoan()">
+    <div class="grid gap-6 mb-6 md:grid-cols-1 w-[350px] mx-auto">
+      <div>
+        <label for="customerId" class="block mb-2 text-sm font-medium text-dark">
+          Customer ID
+        </label>
+        <input
+          type="text"
+          id="customerId"
+          class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
+          placeholder=""
+          formControlName="customerId"
+        />
+      </div>
+  
+      <div>
+        <label for="amount" class="block mb-2 text-sm font-medium text-dark">
+          Monto del prestamo
+        </label>
+  
+        <input
+          type="text"
+          id="amount"
+          class="bg-dark-background border border-dark-secondary text-dark rounded-lg focus:ring-special-info focus:border-special-info block w-full p-2.5"
+          placeholder="Ingresa el monto"
+          formControlName="amount"
+        />
+      </div>
+    </div>
+    <div class="flex justify-center w-[320px] mx-auto">
+      <button
+      aplzButton
+      aplzAppearance="stroked"
+      aplzColor="dark"
+      size="md"
+      type="submit"
+      class="w-full"
+      [disabled]="form.invalid"
+     
+    >
+      Solicitar prestamo
+    </button>
+    </div>
+  </form>
+  
